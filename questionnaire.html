@@ -116,10 +116,12 @@
                 "Union Sprtive de l'Enseignement du Premier degré"
             ];
 
-            const userAnswer = document.getElementById('answer').value.trim();
+            const userAnswer = document.getElementById('answer').value.trim().toLowerCase();
             const feedbackDiv = document.getElementById('feedback');
 
-            if (correctAnswers.includes(userAnswer)) {
+            const isCorrect = correctAnswers.some(answer => answer.toLowerCase() === userAnswer);
+
+            if (isCorrect) {
                 feedbackDiv.innerHTML = 'Bravo ! C\'est la bonne réponse !';
                 feedbackDiv.className = 'feedback success';
                 feedbackDiv.innerHTML += '<br><a href="#" class="next-question-button">Passer à la question suivante</a>';

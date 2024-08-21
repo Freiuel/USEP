@@ -1,16 +1,102 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Jeu USEP</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Accueil - USEP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #0071bc; /* Couleur principale USEP */
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        p {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin-top: 20px;
+            background-color: #28a745; /* Vert inspiré de l'USEP */
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #0071bc;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+            .cta-button {
+                font-size: 1.2em;
+                padding: 10px 20px;
+            }
+        }
+    </style>
 </head>
+
 <body>
+
+    <header>
+        <h1>Bienvenue sur la plateforme USEP</h1>
+        <p>Apprendre et jouer ensemble avec l'USEP</p>
+    </header>
+
     <div class="container">
-        <img src="logo-usep.png" alt="Logo USEP" class="logo">
-        <h1 class="welcome-text">Bienvenue, rappelez-vous : l'USEP est la clé.</h1>
-        <a href="jeu.html" class="start-button">Commencer l'aventure</a>
+        <p>Découvrez notre nouvelle plateforme interactive où vous pouvez participer à des questionnaires et activités ludiques.</p>
+        <a href="#" class="cta-button">Commencer à jouer</a>
     </div>
+
+    <footer>
+        <p>&copy; 2024 USEP - Union Sportive de l'Enseignement du Premier degré</p>
+    </footer>
+
 </body>
+
 </html>

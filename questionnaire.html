@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire - USEP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #0071bc; /* Couleur principale USEP */
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .question-box {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+
+        .input-box {
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0;
+            font-size: 1.2em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit-button {
+            padding: 15px 30px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #218838;
+        }
+
+        .feedback {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+
+        .feedback.success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .feedback.error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .next-question-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #0071bc;
+            color: white;
+        }
+    </style>
+    <script>
+        function checkAnswer() {
+            const correctAnswers = [
+                "Union Sportive de l'Enseignement du Premier degré",
+                "Union Sportive de l'Ensiegnement du Premir degré",
+                "Union Sportif de l'Enseignement du Premier dégré",
+                "Union Sportive de l'Enseignemnt du Premier degré",
+                "Union Sportive de l'Enseignement du Premeir degré",
+                "Unio Sportive de l'Enseignement du Premier degrè",
+                "Union Sportiv de l'Enseignement du Premier degré",
+                "Union Sportive de l'Enseingment du Premier degrée",
+                "Union Sportive de l’Enseignement du Prmier degré",
+                "Union Sportive de l'Enseignement du Premieer degré",
+                "Union Sprtive de l'Enseignement du Premier degré"
+            ];
+
+            const userAnswer = document.getElementById('answer').value.trim();
+            const feedbackDiv = document.getElementById('feedback');
+
+            if (correctAnswers.includes(userAnswer)) {
+                feedbackDiv.innerHTML = 'Bravo ! C\'est la bonne réponse !';
+                feedbackDiv.className = 'feedback success';
+                feedbackDiv.innerHTML += '<br><a href="#" class="next-question-button">Passer à la question suivante</a>';
+            } else {
+                feedbackDiv.innerHTML = 'Désolé, ce n\'est pas la bonne réponse. Essayez encore.';
+                feedbackDiv.className = 'feedback error';
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Questionnaire USEP</h1>
+    </header>
+
+    <div class="container">
+        <div class="question-box">
+            <p>Que signifie l'acronyme USEP ?</p>
+            <input type="text" id="answer" class="input-box" placeholder="Votre réponse ici...">
+            <button onclick="checkAnswer()" class="submit-button">Valider</button>
+        </div>
+        <div id="feedback"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 USEP - Union Sportive de l'Enseignement du Premier degré</p>
+    </footer>
+
+</body>
+
+</html>
